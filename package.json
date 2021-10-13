@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "amplitude-js": "^8.8.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "eslint": "^7.25.0",

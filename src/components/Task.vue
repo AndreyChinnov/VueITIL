@@ -119,7 +119,7 @@
     </table>
     <form @submit.prevent="addComment">
       <input type="text" placeholder="Comment to the task" v-model="message" />
-      <button class="w3-btn w3-green">Add comment</button>
+      <button class="w3-btn w3-green">Add comment 12</button>
     </form>
     <!-- <button @click="completeTask">Complete task!</button> -->
     <b>
@@ -225,6 +225,8 @@ export default {
     },
     onClickTask() {
       this.updateSelectedTask(this.task);
+      amplitude.getInstance().logEvent('task clicked', { task: this.task });
+      console.log('task clicked');
     },
     onDbClick() {
       this.updateSelectedTask(this.task);
@@ -238,6 +240,8 @@ export default {
       //   console.log(comment);
       this.addCommentAction(comment);
       this.message = '';
+      amplitude.getInstance().logEvent('comment added', comment);
+      console.log(comment);
     },
     changePriority(e) {
       const taskChanges = {
@@ -245,6 +249,9 @@ export default {
       };
       console.log(taskChanges);
       this.updateTask(taskChanges);
+      amplitude
+        .getInstance()
+        .logEvent('task change', { task: this.task, taskChanges });
     },
     changeExecutor(e) {
       const taskChanges = {
@@ -252,6 +259,9 @@ export default {
       };
       console.log(taskChanges);
       this.updateTask(taskChanges);
+      amplitude
+        .getInstance()
+        .logEvent('task change', { task: this.task, taskChanges });
     },
     changeDueTo() {
       if (this.task.due_to != this.due_to_local) {
@@ -261,6 +271,9 @@ export default {
         };
         console.log(taskChanges);
         this.updateTask(taskChanges);
+        amplitude
+          .getInstance()
+          .logEvent('task change', { task: this.task, taskChanges });
       }
       //   this.updateTask(taskChanges);
     },

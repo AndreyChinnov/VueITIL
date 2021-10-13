@@ -203,6 +203,10 @@ export default {
       } else {
         this.setCurrentExecutor({ email: '', name: '' });
       }
+      amplitude
+        .getInstance()
+        .logEvent('executor changed', { executor: this.currentExecutor });
+      console.log('executor changed');
     },
     openModal() {
       this.$FModal.show({
