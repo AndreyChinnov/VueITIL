@@ -119,7 +119,7 @@
     </table>
     <form @submit.prevent="addComment">
       <input type="text" placeholder="Comment to the task" v-model="message" />
-      <button class="w3-btn w3-green">Add comment 12</button>
+      <button class="w3-btn w3-green">Add comment</button>
     </form>
     <!-- <button @click="completeTask">Complete task!</button> -->
     <b>
