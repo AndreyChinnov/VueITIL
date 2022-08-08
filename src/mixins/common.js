@@ -55,9 +55,9 @@ export const myMixin = {
   methods: {
     get_url(production = true) {
       if (production) {
-        return "http://itil/itil-api/hs/api";
+        return "http://erp/itil-api/hs/api";
       } else {
-        return "http://itil/itil2-sa/hs/api";
+        return "http://1ctest3/itil2-sa/hs/api";
       }
     },
     getDateMain(DateString) {
